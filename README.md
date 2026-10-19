@@ -1,6 +1,6 @@
 # Groq-powered Discord AI bot
 
-A beginner-friendly Discord bot with `/ask`, `/clear`, and `/ping` slash commands. `/ask` uses Groq's API and keeps a short, temporary conversation history for each user in each server. History is held in memory and is erased when the bot restarts.
+A beginner-friendly Discord bot with `/ask`, `/clear`, and `/ping` slash commands. Members can also mention the bot or reply to one of its messages to get an AI response. The bot uses Groq's API and keeps a short, temporary conversation history for each user in each server. History is held in memory and is erased when the bot restarts.
 
 ## 1. Create the API keys
 
@@ -15,7 +15,9 @@ In the Developer Portal, open **OAuth2 → URL Generator** and select these scop
 - `bot`
 - `applications.commands`
 
-Select only the bot permissions you need. For this starter, **Send Messages** is enough. Open the generated URL and authorize the bot for a server you manage.
+Select the bot permissions it needs: **View Channels**, **Send Messages**, and **Read Message History**. Open the generated URL and authorize the bot for a server you manage.
+
+For mention/reply responses, open the app's **Bot** page in the Developer Portal and enable **Message Content Intent** under **Privileged Gateway Intents**. The code enables this intent too; both settings must be on for the bot to read member messages.
 
 ## 3. Install and configure
 
